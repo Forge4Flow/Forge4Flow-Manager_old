@@ -3,6 +3,7 @@
   "rules": {
     "react/display-name": "off",
     "@next/next/no-img-element": "off",
+    "@next/next/no-html-link-for-pages": ["error", "web/src/pages/"],
     "react/no-unescaped-entities": "off",
     "import/no-anonymous-default-export": "off",
     "@typescript-eslint/no-unused-vars": "error",
@@ -40,7 +41,7 @@
       }
     },
     "next": {
-      "rootDir": "web/"
+      "rootDir": "web/src/"
     }
   }
 }
