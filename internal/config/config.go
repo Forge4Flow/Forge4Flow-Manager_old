@@ -31,20 +31,15 @@ type Forge4FlowConfig struct {
 
 var AppConfig *Forge4FlowConfig
 
-func LoadAppConfig(cfgFile string) {
-	cfg := ConfigFileName
-	if cfgFile != "" {
-		cfg = cfgFile
-	}
-
-	viper.SetConfigFile(cfg)
+func LoadAppConfig() {
+	viper.SetConfigFile(ConfigFileName)
 	viper.SetDefault("serverPort", DefaultServerPort)
 	viper.SetDefault("logLevel", zerolog.DebugLevel)
 	viper.SetDefault("flowNetwork", DefaultFlowNetwork)
 	viper.SetDefault("adminAccount", DefaultAdminAccount)
 
 	// If config file exists, use it
-	_, err := os.ReadFile(cfg)
+	_, err := os.ReadFile(ConfigFileName)
 	if err == nil {
 		if err := viper.ReadInConfig(); err != nil {
 			log.Fatal().Err(err).Msg("Error while reading forge4flow.yaml. Shutting down.")
