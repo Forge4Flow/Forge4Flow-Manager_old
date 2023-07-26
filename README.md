@@ -36,9 +36,9 @@
   <p>
     <a href="http://forge4flow.gitbook.io/docs"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://github.com/Forge4Flow/Forge4Flow-Core/issues">Report Bug</a>
+    <a href="https://github.com/Forge4Flow/Forge4Flow-Manager/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Forge4Flow/Forge4Flow-Core/issues">Request Feature</a>
+    <a href="https://github.com/Forge4Flow/Forge4Flow-Manager/issues">Request Feature</a>
   </p>
 
   <h3>Forge4Flow provides ecosystem and developer tools for the Flow Blockchain, including Identity and Access Management, Blockchain Event Monitoring, and SDKs to better integrate dApps with the ecosystem.</h3>
@@ -67,7 +67,7 @@ By providing these tool sets, we aim to empower developers to focus on deliverin
 
 ## Getting Started
 
-To get started using Forge4Flow, follow the deployment guide to self host your own instance of Forge4Flow-Core. Once you have an instance started, follow one of our SDK quick start guides or check out or documentation for more information.
+To get started using Forge4Flow, follow the deployment guide to self host your own instance of Forge4Flow-Manager. Once you have an instance started, follow one of our SDK quick start guides or check out or documentation for more information.
 
 <!-- ROADMAP -->
 
@@ -118,7 +118,7 @@ To get started using Forge4Flow, follow the deployment guide to self host your o
 - General Purpose
   - [x] [GCP KMS authorizer (signer)](https://github.com/Forge4Flow/GCP-KMS-Flow-Authorizer)
 
-See the [open issues](https://github.com/Forge4Flow/Forge4Flow-Core/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/Forge4Flow/Forge4Flow-Manager/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,15 +145,15 @@ Forge4Flow is distributed under the ELv2 License. See `LICENSE` for more informa
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Forge4Flow/Forge4Flow-Core.svg?style=for-the-badge
-[contributors-url]: https://github.com/Forge4Flow/Forge4Flow-Core/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Forge4Flow/Forge4Flow-Core.svg?style=for-the-badge
-[forks-url]: https://github.com/Forge4Flow/Forge4Flow-Core/network/members
-[stars-shield]: https://img.shields.io/github/stars/Forge4Flow/Forge4Flow-Core.svg?style=for-the-badge
-[stars-url]: https://github.com/Forge4Flow/Forge4Flow-Core/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Forge4Flow/Forge4Flow-Core.svg?style=for-the-badge
-[issues-url]: https://github.com/Forge4Flow/Forge4Flow-Core/issues
+[contributors-shield]: https://img.shields.io/github/contributors/Forge4Flow/Forge4Flow-Manager.svg?style=for-the-badge
+[contributors-url]: https://github.com/Forge4Flow/Forge4Flow-Manager/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Forge4Flow/Forge4Flow-Manager.svg?style=for-the-badge
+[forks-url]: https://github.com/Forge4Flow/Forge4Flow-Manager/network/members
+[stars-shield]: https://img.shields.io/github/stars/Forge4Flow/Forge4Flow-Manager.svg?style=for-the-badge
+[stars-url]: https://github.com/Forge4Flow/Forge4Flow-Manager/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Forge4Flow/Forge4Flow-Manager.svg?style=for-the-badge
+[issues-url]: https://github.com/Forge4Flow/Forge4Flow-Manager/issues
 [license-shield]: https://img.shields.io/badge/license-elv2-blue?style=for-the-badge
-[license-url]: https://github.com/Forge4Flow/Forge4Flow-Core/blob/master/LICENSE
+[license-url]: https://github.com/Forge4Flow/Forge4Flow-Manager/blob/master/LICENSE
 [code-factor-shield]: https://img.shields.io/codefactor/grade/github/forge4flow/forge4flow-manager/main?style=for-the-badge
 [code-factor-url]: https://www.codefactor.io/repository/github/forge4flow/forge4flow-manager
