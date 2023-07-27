@@ -7,7 +7,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/onflow/flow-go-sdk/access/http"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/rs/zerolog/pkgerrors"
@@ -15,18 +14,15 @@ import (
 )
 
 const (
-	DefaultServerPort   = 8000
-	DefaultFlowNetwork  = "emulator"
-	DefaultAdminAccount = "0xf8d6e0586b0a20c7"
-	PrefixForge4Flow    = "forge4flow"
-	ConfigFileName      = "forge4flow.yaml"
+	DefaultServerPort = 8000
+	PrefixForge4Flow  = "forge4flow"
+	ConfigFileName    = "forge4flow.yaml"
 )
 
 type Forge4FlowConfig struct {
-	ServerPort   string `mapstructure:"serverPort"`
-	LogLevel     int8   `mapstructure:"logLevel"`
-	FlowNetwork  string `mapstructure:"flowNetwork"`
-	AdminAccount string `mapstructure:"adminAccount"`
+	ServerPort     string `mapstructure:"serverPort"`
+	LogLevel       int8   `mapstructure:"logLevel"`
+	ProxyNetworkId string `mapstructure:"proxyNetworkId"`
 }
 
 var AppConfig *Forge4FlowConfig
@@ -35,8 +31,6 @@ func LoadAppConfig() {
 	viper.SetConfigFile(ConfigFileName)
 	viper.SetDefault("serverPort", DefaultServerPort)
 	viper.SetDefault("logLevel", zerolog.DebugLevel)
-	viper.SetDefault("flowNetwork", DefaultFlowNetwork)
-	viper.SetDefault("adminAccount", DefaultAdminAccount)
 
 	// If config file exists, use it
 	_, err := os.ReadFile(ConfigFileName)
@@ -73,19 +67,6 @@ func LoadAppConfig() {
 	zerolog.SetGlobalLevel(zerolog.Level(config.LogLevel))
 	if zerolog.GlobalLevel() == zerolog.DebugLevel {
 		log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
-	}
-
-	// Check the selected network host value and assign it to the appropriate constant
-	flowNetwork := config.FlowNetwork
-	switch flowNetwork {
-	case "emulator":
-		config.FlowNetwork = http.EmulatorHost
-	case "testnet":
-		config.FlowNetwork = http.TestnetHost
-	case "mainnet":
-		config.FlowNetwork = http.MainnetHost
-	default:
-		log.Fatal().Msgf("Invalid flowNetwork parameter: %s - valid options are: emulator, testnet, mainnet", flowNetwork)
 	}
 
 	AppConfig = &config

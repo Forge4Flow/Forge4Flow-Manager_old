@@ -15,7 +15,7 @@ COPY web .
 RUN npm run build
 
 # Stage 3: Create the final image with both backend and frontend
-FROM alpine:latest
+FROM alpine:3.18.2
 
 RUN apk add --update nodejs npm
 RUN npm install -g concurrently
@@ -30,4 +30,4 @@ COPY --from=frontend-builder /forge4flow/web/.next ./web/.next
 EXPOSE 8000
 EXPOSE 3000
 
-CMD concurrently "./forge4flow-core" "npm start --prefix ./web"
+CMD concurrently "./forge4flow-manager" "npm start --prefix ./web"

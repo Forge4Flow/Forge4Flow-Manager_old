@@ -8,23 +8,19 @@ import (
 	"gorm.io/gorm"
 )
 
-var DB *gorm.DB
-
-func Connect() error {
+func Connect() (*gorm.DB, error) {
 	instance, err := gorm.Open(sqlite.Open("Forge4FlowManager.db"), &gorm.Config{})
 	if err != nil {
-		return err
+		return nil, err
 	}
-
-	DB = instance
 
 	log.Println("Connected to Database!")
 
-	DB.AutoMigrate(
+	instance.AutoMigrate(
 		&models.CoreInstance{},
 	)
 
 	log.Println("Database Migration Completed!")
 
-	return nil
+	return instance, nil
 }
