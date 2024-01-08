@@ -8,7 +8,7 @@ RUN go mod download
 RUN GOARCH=amd64 GOOS=linux CGO_ENABLED=0 go build -v -o forge4flow-manager main.go
 
 # Stage 2: Create the final image with both backend and frontend
-FROM alpine:3.18.3
+FROM alpine:3.18.5
 
 RUN addgroup -S forge4flow-manager && adduser -S forge4flow-manager -G forge4flow-manager
 USER forge4flow-manager
